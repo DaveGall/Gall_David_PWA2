@@ -1,8 +1,14 @@
 body {
+    background-color: #2643b2;
+}
+
+#container {
     font-family: Helvetica, Arial, sans-serif;
     width: 960px;
     background-color: #f1f4ff;
     margin: auto;
+    overflow: hidden;
+    border: outset;
 }
 h1, h2, h3 {
     font-family: Baskerville, Helvetica, Arial, sans-serif;
@@ -16,6 +22,7 @@ h1, h2, h3 {
     background: linear-gradient(#bac9ff, #2643b2);
     border-radius: 8px;
     color: #ffd55d;
+    font-size: 14px;
 }
 [type=button]:hover {
     background: linear-gradient(#2643b2, #bac9ff);
@@ -27,6 +34,9 @@ input {
 input:hover {
     border: inset #bac9ff;
 }
+a:hover {
+    color: #b28d22;
+}
 a:active {
     color: #d12eff;
 }
@@ -37,28 +47,25 @@ a:active {
 #right {
     float: left;
     clear: right;
-    margin-left: 80px;
+    margin-left: 75px;
     margin-top: 10px;
 }
 #signOut {
     float: left;
     clear: right;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-top: 10px;
 }
 header {
-    margin-top: 5px;
-    border: 1px solid #000000;
     clear: both;
     overflow: hidden;
-    background-color: rgba(255, 213, 93, .4);
+    background-color: rgba(161, 181, 255, .4);
 }
 footer {
     margin-top: 40px;
-    border: 1px solid #000000;
     clear: both;
     overflow: hidden;
-    background-color: rgba(255, 213, 93, .4);
+    background-color: rgba(161, 181, 255, .4);
 }
 
 #main {
@@ -81,19 +88,20 @@ footer a, header a {
 /*Welcome page styling*/
 
 #main {
-    width: 960px;
+    width: 900px;
     border: 1px solid #b28d22;
-    margin: 20px 0;
+    margin: 20px 30px;
 }
 #main h1, #main p {
     padding: 5px;
 }
 
-#uploadBox, #editBox, #projectBox, #logInForm {
+#uploadBox, #editBox, #projectBox {
     width: 300px;
     background-color: rgba(255, 213, 93, .2);
-    border: 1px solid #ffd55d;
-    margin: 40px 8px
+    border: 1px solid #2643b2;
+    margin: 40px 8px;
+    box-shadow: 5px 5px 3px #bac9ff;
 }
 #uploadBox {
     float: left;
@@ -104,10 +112,11 @@ footer a, header a {
     clear: right;
     margin-right: 10px;
 }
-#uploadBox h3, #editBox h3, #projectBox h3, #uploadBox p, #editBox p {
+#uploadBox h3, #editBox h3, #projectBox h3 {
     text-align: center;
 }
-#projectBox p {
+#projectBox p, #uploadBox p, #editBox p {
+    text-indent: 5px;
     margin-left: 7px;
 }
 #upload, #edit, #projects, #submit, #enter {
@@ -137,10 +146,11 @@ input {
     margin: 10px 0;
     text-align: center;
 }
-#header {
+#logo {
     float: left;
     clear: right;
-    margin-left: 40px
+    margin-left: 40px;
+
 }
 /*End Sign Up form styling*/
 
@@ -148,6 +158,16 @@ input {
 
 #login {
     overflow: hidden;
+    /*box-shadow: 5px 5px 3px #bac9ff;*/
+}
+#logInForm {
+    float: left;
+    clear: right;
+    width: 300px;
+    background-color: rgba(255, 213, 93, .2);
+    border: 1px solid #2643b2;
+    margin: 5px 10px 40px 10px;
+
 }
 #login h3 {
     margin-bottom: 10px;
@@ -158,6 +178,49 @@ input {
 }
 #joinNow {
     width: 600px;
+    border: 1px solid #b28d22;
+    margin: 5px 10px;
+    background-color: #ffd55d;
+    overflow: hidden;
+    float: left;
+    box-shadow: 5px 5px 3px #bac9ff;
+}
+#joinNow p {
+    padding-left: 7px;
+}
+#joinNow h2 {
+    text-align: center;
+}
+#cta-signUp {
+    padding: 5px;
+    font-size: 1.5em;
+    float: right;
+    margin: 25px 10px 15px 10px;
+}
+#content {
+    width: 900px;
+    margin: 10px auto;
+    overflow: hidden;
 }
 
+#content h1, #content p {
+    text-align: center;
+}
+#optionOne, #optionTwo, #optionThree, #whyWait {
+    width: 400px;
+    margin: 38px;
+}
+#optionOne h3, #optionTwo h3, #optionThree h3, #whyWait h3 {
+    text-align: center;
+}
+#optionOne p, #optionTwo p, #optionThree p, #whyWait p {
+    text-indent: 7px;
+}
+#optionOne, #optionThree {
+    float: left;
+}
+#optionTwo, #whyWait {
+    float: left;
+    clear: right;
+}
 /*End log in page styling*/
