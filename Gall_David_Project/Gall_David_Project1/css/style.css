@@ -1,0 +1,163 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    width: 960px;
+    background-color: #f1f4ff;
+    margin: auto;
+}
+h1, h2, h3 {
+    font-family: Baskerville, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+[type=button] {
+    border: 1px solid #a1b5ff;
+    background: linear-gradient(#bac9ff, #2643b2);
+    border-radius: 8px;
+    color: #ffd55d;
+}
+[type=button]:hover {
+    background: linear-gradient(#2643b2, #bac9ff);
+    border: 2px solid #a1b5ff;
+}
+input {
+    border: inset;
+}
+input:hover {
+    border: inset #bac9ff;
+}
+a:active {
+    color: #d12eff;
+}
+.left {
+    float: left;
+    margin-top: 10px;
+}
+#right {
+    float: left;
+    clear: right;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+#signOut {
+    float: left;
+    clear: right;
+    margin-left: 120px;
+    margin-top: 10px;
+}
+header {
+    margin-top: 5px;
+    border: 1px solid #000000;
+    clear: both;
+    overflow: hidden;
+    background-color: rgba(255, 213, 93, .4);
+}
+footer {
+    margin-top: 40px;
+    border: 1px solid #000000;
+    clear: both;
+    overflow: hidden;
+    background-color: rgba(255, 213, 93, .4);
+}
+
+#main {
+    clear: both;
+}
+footer ul, header ul {
+    margin-left: 30px;
+    margin-top: 35px;
+    text-align: center;
+    float: left;
+    clear: right;
+}
+footer ul li, header ul li {
+    display: inline-block;
+
+}
+footer a, header a {
+    padding: 10px 50px;
+}
+/*Welcome page styling*/
+
+#main {
+    width: 960px;
+    border: 1px solid #b28d22;
+    margin: 20px 0;
+}
+#main h1, #main p {
+    padding: 5px;
+}
+
+#uploadBox, #editBox, #projectBox, #logInForm {
+    width: 300px;
+    background-color: rgba(255, 213, 93, .2);
+    border: 1px solid #ffd55d;
+    margin: 40px 8px
+}
+#uploadBox {
+    float: left;
+    margin-right: 10px;
+}
+#editBox, #projectBox {
+    float: left;
+    clear: right;
+    margin-right: 10px;
+}
+#uploadBox h3, #editBox h3, #projectBox h3, #uploadBox p, #editBox p {
+    text-align: center;
+}
+#projectBox p {
+    margin-left: 7px;
+}
+#upload, #edit, #projects, #submit, #enter {
+    float: right;
+    margin: 10px;
+    /*border: 2px solid #a1b5ff;
+    background: linear-gradient(#bac9ff, #2643b2);
+    border-radius: 8px;
+    color: #ffd55d;*/
+}
+/*End Welcome Page styling*/
+
+/*Begin Sign Up form styling*/
+#signUpForm {
+    width: 400px;
+    background-color: rgba(255, 213, 93, .6);
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+    border: outset;
+    float: left;
+}
+input {
+    margin-bottom: 15px;
+}
+#signUp h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+#header {
+    float: left;
+    clear: right;
+    margin-left: 40px
+}
+/*End Sign Up form styling*/
+
+/*Begin Log In page styling*/
+
+#login {
+    overflow: hidden;
+}
+#login h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+#login label, #login input {
+    margin-left: 5px;
+}
+#joinNow {
+    width: 600px;
+}
+
+/*End log in page styling*/
