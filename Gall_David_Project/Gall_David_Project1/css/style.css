@@ -5,6 +5,9 @@ body {
 #container {
     font-family: Helvetica, Arial, sans-serif;
     width: 960px;
+    background-image: url("../images/Logo_03.png");
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: #f1f4ff;
     margin: auto;
     overflow: hidden;
@@ -96,7 +99,7 @@ footer a, header a {
     padding: 5px;
 }
 
-#uploadBox, #editBox, #projectBox {
+#uploadBox, #projectBox {
     width: 300px;
     background-color: rgba(255, 213, 93, .2);
     border: 1px solid #2643b2;
@@ -111,6 +114,13 @@ footer a, header a {
     float: left;
     clear: right;
     margin-right: 10px;
+}
+#editBox {
+    width: 300px;
+    background-color: rgba(255, 213, 93, .8);
+    border: 1px solid #2643b2;
+    margin: 40px 8px;
+    box-shadow: 5px 5px 3px #bac9ff;
 }
 #uploadBox h3, #editBox h3, #projectBox h3 {
     text-align: center;
@@ -156,6 +166,13 @@ input {
 
 /*Begin Log In page styling*/
 
+#mainHeader {
+    width: 960px;
+    text-align: center;
+}
+#mainHeader h1 {
+    font-size: 48px;
+}
 #login {
     overflow: hidden;
     /*box-shadow: 5px 5px 3px #bac9ff;*/
@@ -164,9 +181,9 @@ input {
     float: left;
     clear: right;
     width: 300px;
-    background-color: rgba(255, 213, 93, .2);
+    background-color: rgb(255, 213, 93);
     border: 1px solid #2643b2;
-    margin: 5px 10px 40px 10px;
+    margin: 10px 10px 40px 10px;
 
 }
 #login h3 {
@@ -179,7 +196,7 @@ input {
 #joinNow {
     width: 600px;
     border: 1px solid #b28d22;
-    margin: 5px 10px;
+    margin: 10px 10px;
     background-color: #ffd55d;
     overflow: hidden;
     float: left;
@@ -202,7 +219,6 @@ input {
     margin: 10px auto;
     overflow: hidden;
 }
-
 #content h1, #content p {
     text-align: center;
 }
