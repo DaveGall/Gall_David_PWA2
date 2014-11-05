@@ -250,3 +250,29 @@ input {
     clear: right;
 }
 /*End log in page styling*/
+
+/*Styling for the projects page*/
+table {
+    width: 950px;
+    border: 1px solid #b28d22;
+    margin: 20px 4px;
+}
+table th {
+    padding: 5px 50px;
+    border-bottom: 1px solid #b28d22;
+}
+td {
+    padding-left: 25px;
+    border-bottom: 1px solid #b28d22;
+}
+.tableImage {
+    padding-left: 5px;
+}
+
+
+
+
+
+
+
+/*End styling for the project page*/
