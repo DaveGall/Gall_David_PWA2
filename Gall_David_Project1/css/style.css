@@ -20,14 +20,14 @@ h1, h2, h3 { /* Styling for the main headers across the pages */
     margin-bottom: 5px;
     margin-top: 5px;
 }
-[type=button] { /* styling for the buttons across the pages */
+[type=button], #addProject { /* styling for the buttons across the pages */
     border: 1px solid #a1b5ff;
     background: linear-gradient(#bac9ff, #2643b2);
     border-radius: 8px;
     color: #ffd55d;
     font-size: 14px;
 }
-[type=button]:hover { /* A hover state for the buttons */
+[type=button]:hover, #addProject:hover { /* A hover state for the buttons */
     background: linear-gradient(#2643b2, #bac9ff);
     border: 2px solid #a1b5ff;
 }
@@ -53,10 +53,22 @@ a:active {
     margin-left: 75px;
     margin-top: 10px;
 }
+#dashboardButton {
+    float: left;
+    clear: right;
+    margin-left: 20px;
+    margin-top: 10px;
+}
 #signOut { /* Sign out button styling */
     float: left;
     clear: right;
     margin-left: 100px;
+    margin-top: 10px;
+}
+#signOutButton {
+    float: left;
+    clear: right;
+    margin-left: 10px;
     margin-top: 10px;
 }
 header { /* Styling for the header over the pages */
@@ -87,6 +99,9 @@ footer ul li, header ul li {  /* Changing the unordered list into an inline list
 }
 footer a, header a {
     padding: 10px 50px;
+}
+header .proLink {
+    padding: 10px 48px;
 }
 /*Welcome page styling*/
 
@@ -176,7 +191,7 @@ input {
     float: left;
     clear: right;
     width: 300px;
-    background-color: rgb(255, 213, 93);   /* Styling for my the log in form */
+    background-color: rgba(255, 213, 93, .5);   /* Styling for my the log in form */
     border: 1px solid #2643b2;
     margin: 10px 10px 40px 10px;
 
