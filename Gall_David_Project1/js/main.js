@@ -32,7 +32,14 @@
 /* End Pop Up window button styling, overlay styling and image hover styling */
 /* Styling for the table */
     $("tbody tr:even").addClass("even");
-	$("tbody tr:odd").addClass("odd");
+	$("tbody tr:odd").addClass("odd");    /*These two lines add alternating colors to the rows.*/
+
+    $("table tbody tr").mouseover(function(){
+        $(this).addClass("rowHighlight");
+    });                                         /* These few lines of code create a hover effect on each row of my projects table */
+    $("table tbody tr").mouseout(function(){
+        $(this).removeClass("rowHighlight");
+    });
 /*End table styling*/
 /* Styling for my tooltips */
     $(".masterTooltip").hover(function(){
@@ -65,6 +72,7 @@
 }).eq(0).addClass("current");
 
 /* End accordion styling */
+
 
 
 
