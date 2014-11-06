@@ -10,6 +10,7 @@
 	===============================================
 	========================= APPLICATION FUNCTIONS	
 	*/
+/* Pop Up window button styling, overlay styling and image hover styling */
     $(".modalClick").on("click", function(event){
        event.preventDefault();
         $("#overlay")
@@ -28,10 +29,12 @@
     $(".myStatus").mouseout(function(){
        $(this).fadeTo(100, 1);
     });
-
+/* End Pop Up window button styling, overlay styling and image hover styling */
+/* Styling for the table */
     $("tbody tr:even").addClass("even");
 	$("tbody tr:odd").addClass("odd");
-
+/*End table styling*/
+/* Styling for my tooltips */
     $(".masterTooltip").hover(function(){
         var title = $(this).attr("title");
         $(this).data("tipText", title).removeAttr("title");
@@ -44,6 +47,24 @@
         var mouseY = e.pageY + 10;
         $(".tooltip").css({top: mouseY, left: mouseX})
     });
+/*End tooltips styling*/
+/* Accordion styling for my tab section */
+    $("#tab-box p").hide().eq(0).show();
+    $("#tab-box p:not(:first)").hide();
+
+    $("#tabs li").click(function(e){
+        e.preventDefault();
+        $("#tab-box p").hide();
+
+
+    $("#tabs .current").removeClass("current");
+        $(this).addClass("current");
+        var clicked = $(this).find("a:first").attr("href");
+
+        $("#tab-box " + clicked).slideDown("slow");
+}).eq(0).addClass("current");
+
+/* End accordion styling */
 
 
 
