@@ -11,22 +11,22 @@
 	========================= APPLICATION FUNCTIONS	
 	*/
 /* Pop Up window button styling, overlay styling and image hover styling */
-    $(".modalClick").on("click", function(event){
-       event.preventDefault();
-        $("#overlay")
+    $(".modalClick").on("click", function(event){  /* Begins the function that tells the computer to find class modalClick and listen for a click */
+       event.preventDefault();  /* This prevents the computer from doing what it would normally so that it will perform what we want it to. */
+        $("#overlay")/* These next 4 lines are set to look for the id with overlay and have it fade in and then look for the id with modal and fade that in next. */
             .fadeIn()
             .find("#modal")
             .fadeIn();
     });
-    $(".close").on("click", function(event){
-       event.preventDefault();
-        $("#overlay").fadeOut().find("#modal").fadeOut();
+    $(".close").on("click", function(event){   /* This function will listen for a click on the close class */
+       event.preventDefault();   /* This prevents the computer from performing the default action it would normally perform and just do what you ask it to. */
+        $("#overlay").fadeOut().find("#modal").fadeOut();  /* This grabs the id with overlay and fades it out and then looks for the id of modal and fades it out next. */
     });
 
-    $(".myStatus").mouseover(function(){
+    $(".myStatus").mouseover(function(){  /* These two lines of this function listen for a mouse over event and then fade the element with myClass to 50% transparency */
         $(this).fadeTo(100,.5);
     });
-    $(".myStatus").mouseout(function(){
+    $(".myStatus").mouseout(function(){  /* These two lines of this function listen for a mouse out event on the myStatus class and then fade the color back to 100% transparency. */
        $(this).fadeTo(100, 1);
     });
 /* End Pop Up window button styling, overlay styling and image hover styling */
@@ -42,34 +42,34 @@
     });
 /*End table styling*/
 /* Styling for my tooltips */
-    $(".masterTooltip").hover(function(){
-        var title = $(this).attr("title");
-        $(this).data("tipText", title).removeAttr("title");
-        $('<p class="tooltip"></p>').text(title).appendTo("body").fadeIn("fast");
+    $(".masterTooltip").hover(function(){  /* Starts the function that will tell the computer what to do when any element with a class of masterTooltip is hovered over/ */
+        var title = $(this).attr("title");   /* This sets a variable for the result of this and grabs the title attribute */
+        $(this).data("tipText", title).removeAttr("title");   /* This grabs the data from the variable title and removes the word title, leaving just what you typed */
+        $('<p class="tooltip"></p>').text(title).appendTo("body").fadeIn("fast"); /* This line appends it to the body of the page and allows it to fadeIn from its hidden state. */
     }, function(){
-        $(this).attr("title", $(this).data("tipText"));
+        $(this).attr("title", $(this).data("tipText"));/* This function will remove the tooltip class when moved. */
         $(".tooltip").remove();
-    }).mousemove(function(e){
-        var mouseX = e.pageX + 20;
+    }).mousemove(function(e){  /* This function will set where the css style sits on the screen. Here it is set to be 20px right and 10px up from the pointer */
+        var mouseX = e.pageX + 20;  /* These are the variables that will be used to call up the position of the box in relation to the mouse. */
         var mouseY = e.pageY + 10;
-        $(".tooltip").css({top: mouseY, left: mouseX})
+        $(".tooltip").css({top: mouseY, left: mouseX}); /* This is grabbing the class of tooltip and using the css set up for it and the position using the variables that were set up earlier. */
     });
 /*End tooltips styling*/
 /* Accordion styling for my tab section */
-    $("#tab-box p").hide().eq(0).show();
-    $("#tab-box p:not(:first)").hide();
+    $("#tab-box p").hide().eq(0).show(); /*  */
+    $("#tab-box p:not(:first)").hide();  /* This tells the computer to hide all of the paragraphs in the id of tab-box except the first one */
 
-    $("#tabs li").click(function(e){
-        e.preventDefault();
-        $("#tab-box p").hide();
+    $("#tabs li").click(function(e){  /* This function tells the computer to listen for a click event on the li's in the tabs id */
+        e.preventDefault();  /* This prevents the computer from performing the action it would normally perform and only do what the code tells it to do. */
+        $("#tab-box p").hide(); /* This will hide all the paragraphs */
 
 
-    $("#tabs .current").removeClass("current");
-        $(this).addClass("current");
-        var clicked = $(this).find("a:first").attr("href");
+    $("#tabs .current").removeClass("current"); /* This removes the class of current from the tab id that has it */
+        $(this).addClass("current"); /* This will add the class of current to the li that was clicked */
+        var clicked = $(this).find("a:first").attr("href"); /* This variable is being set up to find the first link with the attribute of href */
 
-        $("#tab-box " + clicked).slideDown("slow");
-}).eq(0).addClass("current");
+        $("#tab-box " + clicked).slideDown("slow"); /* This uses the variable and matches it to the paragraph and then slides it down into view from its hidden state. */
+}).eq(0).addClass("current"); /* This will add the class of current to the current li that has been clicked */
 
 /* End accordion styling */
 

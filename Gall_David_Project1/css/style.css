@@ -157,6 +157,12 @@ header .proLink {
     box-shadow: 5px 5px 2px #bac9ff;
     background-color: rgba(186, 201, 255, .2);
 }
+#sidebar h3 {
+    text-align: center;
+}
+#sidebar p {
+    padding-left: 5px;
+}
 #sidebar ul {
     list-style-image: url("../images/App_Logo_03.png");
 }
