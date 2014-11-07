@@ -426,12 +426,4 @@ input[type=radio] + img {
 input[type=radio]:checked + img {
     border: 2px solid #2643b2;
 }
-
-
-
-
-
-
-
-
 /*End Modal window styling*/
