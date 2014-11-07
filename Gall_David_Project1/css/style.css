@@ -54,7 +54,7 @@ a:active {
     margin-left: 75px;
     margin-top: 10px;
 }
-#dashboardButton {
+#dashboardButton {  /* Styling for the dashboard button to place it next to the sign out button */
     float: left;
     clear: right;
     margin-left: 10px;
@@ -66,7 +66,7 @@ a:active {
     margin-left: 100px;
     margin-top: 10px;
 }
-#signOutButton {
+#signOutButton {  /* needed to update the position of the one sign out button to fit in my header */
     float: left;
     clear: right;
     margin-left: 10px;
@@ -106,7 +106,7 @@ header .proLink {
 }
 /*Begin Tool Tip styling*/
 
-.tooltip {
+.tooltip {             /* This is the tooltip class to be called when a user hovers over an input field */
     display: none;
     position: absolute;
     border: 1px solid #bac9ff;
@@ -132,12 +132,11 @@ header .proLink {
     height: 220px;
     margin: 10px 10px 40px 10px;
     float: left;
-    /*border: 1px solid #000000;*/
     background-color: rgba(255, 213, 93, .4);
 }
 #expandableMenu ul li {
     display: inline-block;
-    padding-left: 30px;
+    padding-left: 30px;      /* These lines are to style my tabbed box, li, p and ul. */
 }
 #expandableMenu ul {
     margin-left: -50px;
@@ -164,7 +163,7 @@ header .proLink {
     padding-left: 5px;
 }
 #sidebar ul {
-    list-style-image: url("../images/App_Logo_03.png");
+    list-style-image: url("../images/App_Logo_03.png");  /* These few lines are to style the sidebar where I have links and space for an ad. */
 }
 #sidebar ul li {
     margin-top: 8px;
@@ -183,7 +182,7 @@ header .proLink {
 #gallery {
     width: 960px;
     clear: both;
-    margin: 20px 0;
+    margin: 20px 0;      /* My gallery */
     padding-left: 6px;
     border-top: 1px solid #b28d22;
 }
@@ -193,7 +192,7 @@ header .proLink {
     height: 125px;
     box-shadow: 5px 5px 3px #bac9ff;
     -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
+    -moz-transition: all 1s ease;    /* These two image and image:hover are to help the image increase in size when hovered over. */
     -ms-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
@@ -213,37 +212,6 @@ header .proLink {
 }
 #gallery ul {
     margin: 15px;
-}
-
-/*#uploadBox, #projectBox {     /* Sets the dimension and styling for the main boxes on the welcome page
-    width: 150px;
-    background-color: rgba(255, 213, 93, .2);
-    border: 1px solid #2643b2;
-    margin: 40px 8px;
-    box-shadow: 5px 5px 3px #bac9ff;
-}
-#uploadBox {
-    float: left;
-    margin-right: 10px;
-}                          /* Sets the float and clear so that the boxes are in a horizontal line
-#editBox, #projectBox {
-    float: left;
-    clear: right;
-    margin-right: 10px;
-}
-#editBox {
-    width: 600px;
-    background-color: rgba(255, 213, 93, .8); /* Style the edit box differently than the others because the logo was there
-    border: 1px solid #2643b2;
-    margin: 40px 8px;
-    box-shadow: 5px 5px 3px #bac9ff;
-}
-#uploadBox h3, #editBox h3, #projectBox h3 {
-    text-align: center;
-}                                            /* These align the h3 and the p tags inside the boxes */
-#projectBox p, #uploadBox p, #editBox p {
-    text-indent: 5px;
-    margin-left: 7px;
 }
 #upload, #edit, .projects, #submit, #enter {
     float: right;
@@ -354,7 +322,7 @@ input {
 
 /*Styling for the projects page*/
 table {
-    width: 950px;
+    width: 950px;     /* Styles my table */
     border: 1px solid #b28d22;
     margin: 20px 0;
     background-color: rgba(161, 181, 255, .6);
@@ -376,19 +344,19 @@ td {
 }
 .even {
     background-color: rgba(38, 67, 178, .2);
-}
+}                                               /* These two give the alternating row colors */
 .odd {
     background-color: rgba(161, 181, 255, .2);
 }
 .rowHighlight {
-    background-color: #ffd55d;
+    background-color: #ffd55d;   /* This gives a highlight when a row in the table is hovered over. */
 }
 .edit {
     float: left;
     margin-top: 10px;
 }
 .delete {
-    float: left;
+    float: left;         /* These help style and place the action buttons inside the table. */
     clear: left;
 }
 .view {
@@ -400,7 +368,7 @@ td {
 /*End styling for the project page*/
 /*begin Modal window styling*/
 
-#overlay {
+#overlay {             /* overlay styling */
     width: 100%;
     height: 100%;
     background-color: rgba(178, 141, 34, .5);
@@ -410,7 +378,7 @@ td {
     z-index: 1000;
     display: none;
 }
-#modal {
+#modal {          /* Modal window styling */
     width: 330px;
     background-color: #ffd55d;
     box-shadow: 10px 10px 4px #b28d22;
@@ -424,7 +392,7 @@ td {
     z-index: 1001;
     display: none;
 }
-#modal .header {
+#modal .header {   /* Styling for the header of the modal window. */
     background-color: #2643b2;
     color: #ffd55d;
     padding: 10px;
@@ -432,12 +400,11 @@ td {
 #modal p {
     margin: 15px;
 }
-#modal .close {
+#modal .close {   /* Styles the close button on the modal window. */
     position: absolute;
     right: 5px;
     top: 5px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 24px;
     border: 1px solid #ffd55d;
     padding: 5px 10px;
     cursor: pointer;
@@ -447,7 +414,7 @@ form {
     padding: 10px;
 }
 form.input {
-    padding: 10px;
+    padding: 10px;    /* Styling for the form in the modal window. */
 }
 .myStatus > input[type=radio] {
     display: none;
