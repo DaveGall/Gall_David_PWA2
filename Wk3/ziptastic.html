@@ -432,19 +432,23 @@
 "use strict";
 
 $(document).ready(function () {
-    $('zipCode').change(function(e){
-        var zipCode = $(this).val();
 
-        var requestURL = 'http://ziptasticapi.com/' + zipCode + '?callback=?';
-        $.getJSON(requestURL, null, function(data){
-            console.log(data);
 
-            if(data.city) $('#city').val(data.city);
-            if(data.state) $('#state').val(data.state);
+	
+	$('#zipCode').keyup(function(e){ //This targets the zipCode id for the input of a zipCode and runs the next function on the last keyup.
+		var zipCode = $(this).val(); //Variable set up to grab the value being entered into the zipCode field
 
-        });
-
-    });
+		// This will check to make sure that the entry is equaled to 5 characters and numerical
+		if (zipCode.length === 5 && $.isNumeric(zipCode)) {
+			var requestURL = 'http://ziptasticapi.com/' + zipCode +'?callback=?'; //This is the variable set up to send the request to ziptastic along with the entered zipCode.
+			$.getJSON(requestURL, null, function(data){ //This will run the variable requestURL through this function using the data retrieved from the site.
+				console.log(data);
+				
+				if (data.city) $('#city').val(data.city); //Gets the data for the city and then finds the city id on the html and places the city in its location.
+				if (data.state) $('#state').val(data.state);//Gets the data for the state and then finds the state id on the html and places the state in its location.
+			});
+		}
+	});
 });
 </script>
 </body>
