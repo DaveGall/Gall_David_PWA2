@@ -322,7 +322,7 @@ input {
 
 /*Styling for the projects page*/
 table {
-    width: 960px;     /* Styles my table */
+    width: 960px;     /* Styles my table*/
     border: 1px solid #b28d22;
     margin: 20px 0;
     background-color: rgba(161, 181, 255, .6);

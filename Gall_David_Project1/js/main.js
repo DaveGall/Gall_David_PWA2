@@ -4,7 +4,12 @@
 */
 
 (function($){
-	
+
+    $(document).ready( function () {
+        $('table').DataTable();
+    } );
+
+
 
 	/*
 	===============================================
@@ -70,6 +75,35 @@
 
         $("#tab-box " + clicked).slideDown("slow"); /* This uses the variable and matches it to the paragraph and then slides it down into view from its hidden state. */
 }).eq(0).addClass("current"); /* This will add the class of current to the current li that has been clicked */
+
+    <!-- Start table styling -->
+
+    var table = $('#example').DataTable();
+
+    table.columns().flatten().each( function ( colIdx ) {
+        // Create the select list and search operation
+        var select = $('<select />')
+            .appendTo(
+            table.column(colIdx).footer()
+        )
+            .on( 'change', function () {
+                table
+                    .column( colIdx )
+                    .search( $(this).val() )
+                    .draw();
+            } );
+
+        // Get the search data for the first column and add to the select list
+        table
+            .column( colIdx )
+            .cache( 'search' )
+            .sort()
+            .unique()
+            .each( function ( d ) {
+                select.append( $('<option value="'+d+'">'+d+'</option>') );
+            } );
+    } );<!-- End of table code -->
+
 
 /* End accordion styling */
 
