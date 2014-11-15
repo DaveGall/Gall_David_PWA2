@@ -340,7 +340,7 @@ td {
     color: #2643b2;
 }
 .tableImage {
-    padding-left: 5px;
+    padding: 2px;
 }
 .even {
     background-color: rgba(38, 67, 178, .2);

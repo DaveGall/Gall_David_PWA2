@@ -142,7 +142,28 @@
 	===============================================
 	======================================== EVENTS	
 	*/
-	
+
+    $('#enter').click(function(){
+       var user= $('#username').val();
+       var pass = $('#password').val();
+
+        $.ajax({
+            url: 'xhr/login.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                username: user,
+                password: pass
+            },
+            success: function(response){
+                if(response.error){
+                    alert(response.error);
+                }else{
+                    window.location.assign('projects.html')
+                }
+            }
+        })
+    });
 	
 	/*	
 	==================================== END EVENTS 
