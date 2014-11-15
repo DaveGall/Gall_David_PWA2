@@ -165,7 +165,20 @@
 	
 
 <!--8.Embed the WU Webcams thumbnails feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: 'http://api.wunderground.com/api/fea5f7c6081ec410/webcams/q/OR/Ashland.json',
+                dataType: 'jsonp',
+                success: function(data){
+                    $.each(data.webcams, function(k, v){
+                        console.log(v.city+", "+ v.state+"\n"+ v.WIDGETCURRENTIMAGEURL);
+                    })
+                }
+            })
+        })
+
+	</script>
 
 
 <!--9.Embed the WU  Dynamic animated Radar image feature.-->	
