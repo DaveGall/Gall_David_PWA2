@@ -160,8 +160,27 @@
 	</script>
 	
 	
-<!--7.Embed the WU Travel Planner feature.-->	
-	<script></script>
+<!--7.Embed the WU Travel Planner feature.-->
+
+<!-- I am sorry but for some reason I just cannot figure this one out. I was hoping to have more time today but somehow
+ the first one I completed (except for this problem) got deleted off my computer. -->
+	<!--<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/planner_07010704/q/OR/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    var trip = data['trip']['title'];
+                    var airport = data['trip']['airport_code'];
+                    var start = data['date']['pretty'];
+                    document.write(trip+"\n "+airport+"\n"+start);
+
+                }
+
+            })
+        })
+
+	</script>-->
 	
 
 <!--8.Embed the WU Webcams thumbnails feature.-->	
