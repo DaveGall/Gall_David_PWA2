@@ -182,7 +182,20 @@
 
 
 <!--9.Embed the WU  Dynamic animated Radar image feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/animatedradar/q/OR/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    var map = data['radar']['url'];
+                    console.log("This is the animated map: "+map);
+                }
+            })
+        })
+
+
+	</script>
 
 	
 <!--10.Embed the WU Current Tropical Storms feature.-->	
