@@ -186,7 +186,23 @@
 
 	
 <!--10.Embed the WU Current Tropical Storms feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/currenthurricane/view.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    $.each(data.currenthurricane, function(k, v){
+                        console.log("Storm Name: "+ v.stormInfo.stormName+"\n"+ v.Current.Category+"\n"+ "Lat: "+v.Current.lat+"º"
+                        +"\nLong: "+ v.Current.lon+"º\n"+ v.Current.Time.pretty+"\nWind Speed: "+ v.WindSpeed.Mph+"MPH\n"+
+                                "Gusts: "+v.WindGusts.Mph+"MPH\n"+ v.Fspeed.Mph+"MPH\n"+"Movement: "+ v.Movement.Text+"\n"+
+                        "Pressure: "+ v.Pressure.inches);
+                    })
+                }
+            })
+        })
+
+	</script>
 	
 </body>
 </html>
