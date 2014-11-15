@@ -39,7 +39,7 @@
                 dataType: 'jsonp',
                 success: function(data){
                     $.each(data.forecast.txt_forecast.forecastday, function(k, v){
-                    console.log("Day: "+ v.title+"\n"+ v.fcttext);
+                    console.log("3 day forecast.\nDay: "+ v.title+"\n"+"Forecast:"+ v.fcttext);
                     })
                 }
             })
@@ -104,7 +104,22 @@
 
 	
 <!--4.Embed the WU 10-day forecast summary feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/forecast10day/q/OR/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    $.each(data.forecast.txt_forecast.forecastday, function(k, v){
+                        console.log("10 day forecast.\nDay: "+ v.title+"\n"+"Forecast: \n"+ v.fcttext);
+
+                    })
+                }
+            })
+        });
+
+	</script>
 
 	
 <!--5.Embed the WU Hourly 1-day forecast feature.-->	
