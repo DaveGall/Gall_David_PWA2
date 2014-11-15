@@ -78,7 +78,29 @@
 
 
 <!--3.Embed the WU Almanac for today feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/almanac/q/OR/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    var airport = data['almanac']['airport_code'];
+                    var highTemp = data['almanac']['temp_high']['normal']['F'];
+                    var recordHigh = data['almanac']['temp_high']['record']['F'];
+                    var recYear = data['almanac']['temp_high']['recordyear'];
+                    var lowTemp = data['almanac']['temp_low']['normal']['F'];
+                    var recLow = data['almanac']['temp_low']['record']['F'];
+                    var lowRecYear = data['almanac']['temp_low']['recordyear'];
+
+                    alert("Local Airport: "+airport+"\n"+"Average High: "+highTemp+"ºF\n"+"Record High: "
+                    +recordHigh+"ºF\n"+"Record Year: "+recYear+"\n"+"Average Low: "+lowTemp+"ºF\n"
+                    +"Record Low: "+recLow+"ºF\n"+"Record Year: "+lowRecYear);
+                }
+            });
+        });
+
+	</script>
 
 	
 <!--4.Embed the WU 10-day forecast summary feature.-->	
