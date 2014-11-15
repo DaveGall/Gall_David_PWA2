@@ -123,7 +123,22 @@
 
 	
 <!--5.Embed the WU Hourly 1-day forecast feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/hourly/q/OR/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    $.each(data.hourly_forecast, function(k, v){
+                        console.log("Hourly Forecast:\n"+ v.FCTTIME.pretty+"\n"+ v.temp.english
+                        +"ºF\n"+ v.dewpoint.english+"ºF\n"+ v.condition+"\n"+ v.wspd.english+
+                        " MPH\n"+ v.wdir.dir+"\n"+ v.humidity+"\n"+ v.feelslike.english+"ºF\n");
+                    });
+                }
+            })
+        });
+
+	</script>
 
 
 <!--6.Embed the WU Severe alerts feature.-->	
