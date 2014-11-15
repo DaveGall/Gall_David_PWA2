@@ -32,7 +32,20 @@
 <!--Use your own API key and city location-->
 	
 <!--1.Embed the WU 3-day forecast summary feature.-->
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/forecast/q/CA/San_Francisco.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    $.each(data.forecast.txt_forecast.forecastday, function(k, v){
+                    console.log("Day: "+ v.title+"\n"+ v.fcttext);
+                    })
+                }
+            })
+        });
+
+	</script>
 
 
 <!--2.Embed the WU Astronomy feature.-->	
