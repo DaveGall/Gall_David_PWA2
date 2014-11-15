@@ -35,7 +35,7 @@
 	<script>
         $(document).ready(function($){
             $.ajax({
-                url: "http://api.wunderground.com/api/fea5f7c6081ec410/forecast/q/CA/San_Francisco.json",
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/forecast/q/OR/Ashland.json",
                 dataType: 'jsonp',
                 success: function(data){
                     $.each(data.forecast.txt_forecast.forecastday, function(k, v){
@@ -49,7 +49,32 @@
 
 
 <!--2.Embed the WU Astronomy feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url:"http://api.wunderground.com/api/fea5f7c6081ec410/astronomy/q/Oregon/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    var moonPhase = data['moon_phase']['percentIlluminated'];
+                    var moonAge = data['moon_phase']['ageOfMoon'];
+                    var sunrise = data['moon_phase']['sunrise']['hour'];
+                    var sunriseMinute = data['moon_phase']['sunrise']['minute'];
+                    var sunsetHour = data['moon_phase']['sunset']['hour'];
+                    var sunsetMinute = data['moon_phase']['sunset']['minute'];
+                    var hour = data['moon_phase']['current_time']['hour'];
+                    var minute = data['moon_phase']['current_time']['minute'];
+
+                    alert("Moon Ill: "+moonPhase+"%\n"+"Moon Age: "+moonAge+"\n"+"Current Time: "
+                            +hour+":"+minute+"\n"+"Sunrise: "
+                    +sunrise+":"+sunriseMinute+"\n"+"Sunset: "+sunsetHour+":"+sunsetMinute);
+
+                }
+
+
+            })
+        })
+
+	</script>
 
 
 <!--3.Embed the WU Almanac for today feature.-->	
