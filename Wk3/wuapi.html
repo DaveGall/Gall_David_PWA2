@@ -142,7 +142,22 @@
 
 
 <!--6.Embed the WU Severe alerts feature.-->	
-	<script></script>
+	<script>
+        $(document).ready(function($){
+            $.ajax({
+                url: "http://api.wunderground.com/api/fea5f7c6081ec410/alerts/q/OR/Ashland.json",
+                dataType: 'jsonp',
+                success: function(data){
+                    $.each(data.alerts, function(k, v){
+                       alert("Weather Alerts!!\n"+ v.description+"\n"+ v.date+"\n"+ v.expires+"\n"+ v.message);
+                    });
+                }
+
+            })
+        })
+
+
+	</script>
 	
 	
 <!--7.Embed the WU Travel Planner feature.-->	
