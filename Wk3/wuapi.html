@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<!--Link to jQuery Library-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
+
+	
+<!--This is an example of how to embed Geolookup. Use your own API key and city location-->	
+	
+<script> jQuery(document).ready(function($) { 
+	$.ajax({ 
+		url : "http://api.wunderground.com/api/fea5f7c6081ec410/geolookup/conditions/q/OR/Ashland.json",
+		dataType : "jsonp", 
+		success : function(parsed_json) { 
+			var location = parsed_json['location']['city']; 
+			var temp_f = parsed_json['current_observation']['temp_f'];
+            alert("Current temperature in " + location + " is: " + temp_f+"ºF");
+		} 
+	});
+}); 
+
+</script>		
+	
+<!--Use your own API key and city location-->
+	
+<!--1.Embed the WU 3-day forecast summary feature.-->
+	<script></script>
+
+
+<!--2.Embed the WU Astronomy feature.-->	
+	<script></script>
+
+
+<!--3.Embed the WU Almanac for today feature.-->	
+	<script></script>
+
+	
+<!--4.Embed the WU 10-day forecast summary feature.-->	
+	<script></script>
+
+	
+<!--5.Embed the WU Hourly 1-day forecast feature.-->	
+	<script></script>
+
+
+<!--6.Embed the WU Severe alerts feature.-->	
+	<script></script>
+	
+	
+<!--7.Embed the WU Travel Planner feature.-->	
+	<script></script>
+	
+
+<!--8.Embed the WU Webcams thumbnails feature.-->	
+	<script></script>
+
+
+<!--9.Embed the WU  Dynamic animated Radar image feature.-->	
+	<script></script>
+
+	
+<!--10.Embed the WU Current Tropical Storms feature.-->	
+	<script></script>
+	
+</body>
+</html>
