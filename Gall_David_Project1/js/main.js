@@ -156,6 +156,60 @@ console.log("The password is working");
     });
     /*End formatting for the dashboard button*/
 
+    /* Start formatting for sign up button */
+
+    $('#cta-signUp').click(function(e){
+        e.preventDefault();
+        window.location.assign('signup.html');
+    });
+
+    /* End formatting for sign up button */
+
+    /* Begin formatting for my projects button */
+
+    $('.projects').click(function(e){
+        e.preventDefault();
+        window.location.assign('projects.html');
+    });
+
+    /* End formatting for my projects button */
+    
+    /* Start formatting for date picker */
+    
+    $('.myDatePicker').datepicker();
+    
+    /* End Formatting for date picker */
+
+    /* Start formatting for accordion menu */
+
+    $('#expandableMenu').accordion();
+
+    /* End formatting for accordion menu */
+
+
+
+
+
+
+setInterval(rotateImages, 2000);
+
+
+    function rotateImages(){
+        var curPhoto = $(' #gallery div.current ');
+        var nxtPhoto = curPhoto.next();
+        if(nxtPhoto.length == 0)
+        nxtPhoto = $(' #gallery div:first ');
+
+        curPhoto.removeClass('current').addClass('previous');
+        nxtPhoto.css({opacity:0.0}).addClass('current').animate({opacity:1.0}, 1000,
+        function(){
+            curPhoto.removeClass('previous');
+
+        });
+
+
+}
+
 
     /* Begin Sign Up Formatting */
 
@@ -237,6 +291,19 @@ console.log("The password is working");
 
 
     /* End adding new projects formatting */
+    /* Start sortable formatting */
+
+
+
+    $('#sortable').sortable();
+
+    $('#sortable').disableSelection();
+
+
+
+
+    /* End sortable formatting */
+
 
     /* Start formatting for getting projects */
 
@@ -254,15 +321,25 @@ console.log("The password is working");
                     for(var i= 0, j=response.projects.length; i<j; i++){
                         var result = response.projects[i];
 
-                        $('#myTable').append(
-                             "<tr class='sim'>"+"<td>"+"<img src='"+result.updatedDate+"' class='proImages'/>"+"</td>"+
+                        $('.projectList').append(
+                                "<div id='sortable' class='sim'>"+"<div id='image'>"+"<img src='"+result.updatedDate+"' class='proImages'/>"+"</div>"+
+                                "<input class='projectid' type='hidden' value='"+result.id+"'>"+
+                                "<div id='name'> "+result.projectName+"</div>"+
+                                "<div id='desc'> "+result.projectDescription+"</div>"+
+                                "<div id='status'> "+result.status+"</div>"+
+                                "<div id='date'>"+result.dueDate+"</div>"+"<div id='proButtons'>"+
+                                '<input name="edit" type="button" class="edit" value="Edit">'+'<input proID="' + result.id +'" name="delete" type="button" class="delete" value="Delete">'+'<input name="view" type="button" class="view" value="View">'+"</div>"+'</div>'
+                        );
+
+                        /*$('.myProjects').append(
+                             "<tr id='sortable' class='sim'>"+"<td>"+"<img src='"+result.updatedDate+"' class='proImages'/>"+"</td>"+
                             "<input class='projectid' type='hidden' value='"+result.id+"'>"+
                             "<td> "+result.projectName+"</td>"+
                             "<td> "+result.projectDescription+"</td>"+
                             "<td> "+result.status+"</td>"+
                             "<td>"+result.dueDate+"</td>"+"<td>"+
                             '<input name="edit" type="button" class="edit" value="Edit">'+'<input proID="' + result.id +'" name="delete" type="button" class="delete" value="Delete">'+'<input name="view" type="button" class="view" value="View">'+"</td>"+'</tr>'
-                        )
+                        )*/
                     }
 
                     $('.delete').on('click', function(e){

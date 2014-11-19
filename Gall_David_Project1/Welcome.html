@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Welcome Back To Vault Pro</title>
     <link rel="stylesheet" href="css/style.css?v=1">
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-ui.theme.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="container"><!-- Beginning of the site wrapper -->
@@ -24,18 +27,40 @@
         <p>Welcome to your Vault Pro dashboard. You can use this area to access
            your account features. You can choose to upload, find users or view your projects from here. </p>
     </div>
-    <div id="expandableMenu"> <!-- This begins my tabbed box that will be expandable -->
+
+    <div id="expandableMenu">
+        <h2>Projects</h2>
+        <div>
+
+        <p>Go to your projects page and view what you have uploaded. From here you can also edit, delete and upload projects.<br>
+            <input name="projects" type="button" class="projects" value="Projects"/></p><br>
+    </div>
+        <h2>Tasks</h2>
+        <div>
+
+        <p id="tasks">Upload, edit, delete, share, here you have many options to choose from that will be of great use to you.<br>
+            <input name="upload" type="button" id="upload" value="Tasks"/> </p><br>
+    </div>
+        <h2>Users</h2>
+        <div>
+
+        <p id="users">Here you can pick which users you may want to communicate with or see their work. This link allows you to communicate with them.<br>
+            <input name="edit" type="button" id="edit" value="Users"/></p><br>
+    </div>
+
+    </div>
+  <!--  <div id="expandableMenu">  This begins my tabbed box that will be expandable
 
             <ul id="tabs">
-                <li><a href="#projects"><h2>Projects</h2></a> </li>  <!-- Links that will match up with paragraphs below -->
+                <li><a href="#projects"><h2>Projects</h2></a> </li>  Links that will match up with paragraphs below
                 <li><a href="#tasks"><h2>Tasks</h2></a> </li>
                 <li><a href="#users"><h2>Users</h2></a> </li>
-            </ul>
+            </ul>-->
 
            <!-- The tab-box that holds all the paragraphs that link to the list items above -->
-        <div id="tab-box">
+      <!--  <div id="tab-box">
             <p id="projects">Go to your projects page and view what you have uploaded. From here you can also edit, delete and upload projects.<br>
-            <a href="http://localhost:8888/Gall_David_Project1/projects.html"><input name="projects" type="button" class="projects" value="Projects"/></a></p><br>
+            <input name="projects" type="button" class="projects" value="Projects"/></p><br>
 
             <p id="tasks">Upload, edit, delete, share, here you have many options to choose from that will be of great use to you.<br>
             <input name="upload" type="button" id="upload" value="Tasks"/> </p><br>
@@ -43,7 +68,7 @@
             <p id="users">Here you can pick which users you may want to communicate with or see their work. This link allows you to communicate with them.<br>
             <input name="edit" type="button" id="edit" value="Users"/></p><br>
         </div>
-    </div>
+    </div>-->
     <div id="sidebar"> <!-- This begins my sidebar with some helpful links and some space for a small 125 x 125 ad -->
         <h3>Fun Stuff</h3>
         <hr>
@@ -54,23 +79,46 @@
             <li><a href="#">Job Postings</a> </li>
             <li><a href="#">Newsletter</a> </li>
         </ul>
-        <div id="adSpace"><p>This is Ad Space.</p></div>
+
+        <h3>Gallery of Projects</h3> <!-- This is the beginning of my project gallery -->
+        <div id="gallery">
+
+            <div class="current">
+                <img src="images/hotel_125x125.jpg" alt="Photo Gallery" width="125" height="125"/>
+            </div>
+            <div>
+                <img src="images/Paris_125x125.jpg" alt="Photo Gallery" width="125" height="125"/>
+            </div>
+            <div>
+                <img src="images/ballys_125x125.jpg" alt="Photo Gallery" width="125" height="125"/>
+            </div>
+            <div>
+                <img src="images/sig_125x125.jpg" alt="Photo Gallery" width="125" height="125"/>
+            </div>
+            <div>
+                <img src="images/New_125x125.jpg" alt="Photo Gallery" width="125" height="125"/>
+            </div>
+            <div>
+                <img src="images/Bellagio_125x125.jpg" alt="Photo Gallery" width="125" height="125"/>
+            </div>
+
+        </div>
+
+       <!-- <div id="adSpace"><p>This is Ad Space.</p></div>-->
     </div>              <!-- This ends the sidebar -->
 
-    <div id="gallery">  <!-- This is the beginning of my project gallery -->
-        <h2>Gallery of Projects</h2>
-
-        <ul>
-        <li class="image"><a href="#"><img src="images/hotel_125x125.jpg"></a></li>
-        <li class="image"><a href="#"><img src="images/Paris_125x125.jpg"></a></li>
-        <li class="image"><a href="#"><img src="images/ballys_125x125.jpg"></a></li>
-        <li class="image"><a href="#"><img src="images/sig_125x125.jpg"></a></li>
-        <li class="image"><a href="#"><img src="images/New_125x125.jpg"></a></li>
-        <li class="image"><a href="#"><img src="images/Bellagio_125x125.jpg"></a></li>
-        </ul>
-    </div><!-- This ends the gallery div -->
 
 
+    <!-- This ends the gallery div -->
+
+    <!-- <ul>
+            <li class="image current"><a href="#"><img src="images/hotel_125x125.jpg"></a></li>
+            <li class="image"><a href="#"><img src="images/Paris_125x125.jpg"></a></li>
+            <li class="image"><a href="#"><img src="images/ballys_125x125.jpg"></a></li>
+            <li class="image"><a href="#"><img src="images/sig_125x125.jpg"></a></li>
+            <li class="image"><a href="#"><img src="images/New_125x125.jpg"></a></li>
+            <li class="image"><a href="#"><img src="images/Bellagio_125x125.jpg"></a></li>
+            </ul>-->
 
 
 
@@ -86,6 +134,7 @@
     </footer>
 </div><!-- End of the site wrapper -->
 <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>

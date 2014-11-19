@@ -179,20 +179,31 @@ header .proLink {
     text-align: center;
 }
 
-#gallery {
-    width: 960px;
-    clear: both;
-    margin: 20px 0;      /* My gallery */
-    padding-left: 6px;
+#gallery {/* My gallery */
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin: 20px 87px;
     border-top: 1px solid #b28d22;
 }
+#gallery div {
+    position: absolute;
+    z-index: 0;
+}
+#gallery div.previous {
+    z-index: 1;
+}
+#gallery div.current {
+    z-index: 2;
+}
 
-.image {
+
+/*.image {
     width: 125px;
     height: 125px;
     box-shadow: 5px 5px 3px #bac9ff;
     -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;    /* These two image and image:hover are to help the image increase in size when hovered over. */
+    -moz-transition: all 1s ease;     These two image and image:hover are to help the image increase in size when hovered over.
     -ms-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
@@ -206,13 +217,45 @@ header .proLink {
 #gallery ul li {
     display: inline-block;
     margin: 5px;
+}*/
+#myProjects {
+    width: 960px;
+    overflow: hidden;
 }
-#gallery h2 {
+#sortable {
+    width: 960px;
+    height: 135px;
+    border: 1px solid #2643b2;
+    background: rgba(161, 181, 255, .5);
+    margin-bottom: 10px;
+}
+#image {
+    margin: 5px 5px 5px 0;
+    float: left;
+}
+#name {
+    float: left;
+    clear: right;
+}
+#desc, #status, #date, #proButtons {
+    float: left;
+    clear: right;
+}
+#desc, #status, #date, #name {
+    width: 155px;
+    text-align: center;
+    margin-top: 60px;
+
+}
+#proButtons {
+    margin-left: 50px;
+}
+#gallery h3 {
     text-align: center;
 }
-#gallery ul {
+/*#gallery ul {
     margin: 15px;
-}
+}*/
 #upload, #edit, .projects, #submit, #enter {
     float: right;
     margin: 10px;
@@ -328,7 +371,8 @@ table {
     background-color: rgba(161, 181, 255, .6);
 }
 table th {
-    padding: 5px 50px;
+    width: 167px;
+    padding: 10px 0;
     border-bottom: 1px solid #b28d22;
     background-color: rgba(38, 67, 178, .6);
     color: #ffffff;
