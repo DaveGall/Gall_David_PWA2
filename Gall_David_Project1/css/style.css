@@ -1,3 +1,4 @@
+/*  Project by David Gall  */
 body {
     background-color: #2643b2; /*The body of the site, which would be the complete background */
 }
@@ -178,7 +179,7 @@ header .proLink {
 #adSpace p {
     text-align: center;
 }
-
+/*  Start formatting for image rotator */
 #gallery {/* My gallery */
     position: relative;
     width: 125px;
@@ -196,32 +197,13 @@ header .proLink {
 #gallery div.current {
     z-index: 2;
 }
-
-
-/*.image {
-    width: 125px;
-    height: 125px;
-    box-shadow: 5px 5px 3px #bac9ff;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;     These two image and image:hover are to help the image increase in size when hovered over.
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-}
-.image:hover {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
-}
-#gallery ul li {
-    display: inline-block;
-    margin: 5px;
-}*/
+/*  End formatting for image rotator */
 #myProjects {
     width: 960px;
     overflow: hidden;
 }
+
+/*  Start formatting for the sortable table housing projects */
 #sortable {
     width: 960px;
     height: 135px;
@@ -250,12 +232,11 @@ header .proLink {
 #proButtons {
     margin-left: 50px;
 }
+/*  End formatting for the sortable table housing projects */
 #gallery h3 {
     text-align: center;
 }
-/*#gallery ul {
-    margin: 15px;
-}*/
+
 #upload, #edit, .projects, #submit, #enter {
     float: right;
     margin: 10px;
@@ -389,12 +370,7 @@ td {
 #myTable .proImages {
     padding-right: 15px;
 }
-.even {
-    background-color: rgba(38, 67, 178, .2);
-}                                               /* These two give the alternating row colors */
-.odd {
-    background-color: rgba(161, 181, 255, .2);
-}
+
 .rowHighlight {
     background-color: #ffd55d;   /* This gives a highlight when a row in the table is hovered over. */
 }

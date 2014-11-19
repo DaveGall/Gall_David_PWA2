@@ -1,7 +1,7 @@
 /*  
 	Your Project Title
 	Author: You
-*/
+*//*  Project by David Gall  */
 
 (function($){
 
@@ -26,16 +26,15 @@
         $("#overlay").fadeOut().find("#modal").fadeOut();  /* This grabs the id with overlay and fades it out and then looks for the id of modal and fades it out next. */
     });
 
-    $(".myStatus").mouseover(function(){  /* These two lines of this function listen for a mouse over event and then fade the element with myClass to 50% transparency */
+    $(" .myStatus ").mouseover(function(){  /* These two lines of this function listen for a mouse over event and then fade the element with myClass to 50% transparency */
         $(this).fadeTo(100,.5);
     });
-    $(".myStatus").mouseout(function(){  /* These two lines of this function listen for a mouse out event on the myStatus class and then fade the color back to 100% transparency. */
+    $(" .myStatus ").mouseout(function(){  /* These two lines of this function listen for a mouse out event on the myStatus class and then fade the color back to 100% transparency. */
        $(this).fadeTo(100, 1);
     });
 /* End Pop Up window button styling, overlay styling and image hover styling */
 /* Styling for the table */
-    $("tbody tr:even").addClass("even");
-	$("tbody tr:odd").addClass("odd");    /*These two lines add alternating colors to the rows.*/
+
 
     $("tbody tr.sim").on('mouseover', function(){
         $(this).css("background-color", "#ffd55d");
@@ -59,15 +58,15 @@
     });
 /*End tooltips styling*/
 /* Accordion styling for my tab section */
-    $("#tab-box p").hide().eq(0).show(); /*  */
-    $("#tab-box p:not(:first)").hide();  /* This tells the computer to hide all of the paragraphs in the id of tab-box except the first one */
+    $(" #tab-box p ").hide().eq(0).show(); /*  */
+    $(" #tab-box p:not(:first) ").hide();  /* This tells the computer to hide all of the paragraphs in the id of tab-box except the first one */
 
-    $("#tabs li").click(function(e){  /* This function tells the computer to listen for a click event on the li's in the tabs id */
+    $(" #tabs li ").click(function(e){  /* This function tells the computer to listen for a click event on the li's in the tabs id */
         e.preventDefault();  /* This prevents the computer from performing the action it would normally perform and only do what the code tells it to do. */
-        $("#tab-box p").hide(); /* This will hide all the paragraphs */
+        $(" #tab-box p ").hide(); /* This will hide all the paragraphs */
 
 
-    $("#tabs .current").removeClass("current"); /* This removes the class of current from the tab id that has it */
+    $(" #tabs .current ").removeClass("current"); /* This removes the class of current from the tab id that has it */
         $(this).addClass("current"); /* This will add the class of current to the li that was clicked */
         var clicked = $(this).find("a:first").attr("href"); /* This variable is being set up to find the first link with the attribute of href */
 
@@ -188,7 +187,7 @@ console.log("The password is working");
 
 
 
-
+/* Start formatting for rotating images */
 
 
 setInterval(rotateImages, 2000);
@@ -210,6 +209,7 @@ setInterval(rotateImages, 2000);
 
 }
 
+    /* End formatting for rotating images */
 
     /* Begin Sign Up Formatting */
 
@@ -331,15 +331,7 @@ setInterval(rotateImages, 2000);
                                 '<input name="edit" type="button" class="edit" value="Edit">'+'<input proID="' + result.id +'" name="delete" type="button" class="delete" value="Delete">'+'<input name="view" type="button" class="view" value="View">'+"</div>"+'</div>'
                         );
 
-                        /*$('.myProjects').append(
-                             "<tr id='sortable' class='sim'>"+"<td>"+"<img src='"+result.updatedDate+"' class='proImages'/>"+"</td>"+
-                            "<input class='projectid' type='hidden' value='"+result.id+"'>"+
-                            "<td> "+result.projectName+"</td>"+
-                            "<td> "+result.projectDescription+"</td>"+
-                            "<td> "+result.status+"</td>"+
-                            "<td>"+result.dueDate+"</td>"+"<td>"+
-                            '<input name="edit" type="button" class="edit" value="Edit">'+'<input proID="' + result.id +'" name="delete" type="button" class="delete" value="Delete">'+'<input name="view" type="button" class="view" value="View">'+"</td>"+'</tr>'
-                        )*/
+
                     }
 
                     $('.delete').on('click', function(e){
