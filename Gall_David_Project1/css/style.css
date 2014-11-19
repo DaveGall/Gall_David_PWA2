@@ -237,7 +237,7 @@ header .proLink {
     text-align: center;
 }
 
-#upload, #edit, .projects, #submit, #enter {
+#upload, #edit, .projects, #submit, #enter, #updateButton {
     float: right;
     margin: 10px;
 }
@@ -450,3 +450,23 @@ input[type=radio]:checked + img {
     border: 2px solid #2643b2;
 }
 /*End Modal window styling*/
+
+/* Update account formatting */
+#imageAvatar {
+    width: 125px;
+    height: 125px;
+    border: 1px solid #ffd55d;
+    float: left;
+    clear: right;
+    margin: 100px 100px 100px 200px;
+}
+
+/* End update account formatting */
+
+
+
+
+
+
+
+

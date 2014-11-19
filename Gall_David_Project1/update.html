@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Update Account</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+
+<div id="container">
+<div id="signUpForm">
+    <form id="signUp">
+        <h3>Update Account Information</h3>
+        <hr>
+        <label for="updatefirstname">First Name</label><br>  <!-- I have added a class of tooltip and a title to display when the user hovers over the input box. -->
+        <input name="firstName" type="text" id="updatefirstname" placeholder="First Name" class="masterTooltip" title="Please enter your First Name"/> <br>
+        <label for="updatelastname">Last Name</label> <br>
+        <input name="lastName" type="text" id="updatelastname" placeholder="Last Name" class="masterTooltip" title="Please enter your Last Name"/> <br>
+        <label for="updateemail">Email Address</label> <br>
+        <input name="emailAddress" type="email" id="updateemail" placeholder="Enter Email Here" class="masterTooltip" title="Please enter your Email Address"/> <br>
+        <label for="accountPic">Avatar 125 x 125</label><br>
+        <input name="image" type="text" id="accountPic" placeholder="image URL" class="masterToolTip" title="Add an Avatar"/><br>
+
+        <input name="submit" type="button" id="updateButton" value="Update Account" class="masterTooltip" title="Update your information"/>
+    </form>
+
+</div>
+
+<div id="imageAvatar">
+
+</div>
+
+</div>
+
+
+
+
+
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

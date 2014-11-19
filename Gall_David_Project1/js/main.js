@@ -185,7 +185,10 @@ console.log("The password is working");
 
     /* End formatting for accordion menu */
 
-
+    $('#account').click(function(e){
+        e.preventDefault();
+        window.location.assign('update.html');
+    });
 
 /* Start formatting for rotating images */
 
@@ -363,6 +366,66 @@ setInterval(rotateImages, 2000);
     };
 projects();
     /* End formatting for getting projects */
+
+    var updateAcct = function(){
+
+        $.ajax({
+            url: 'xhr/get_user.php',
+            type: 'get',
+            dataType: 'json',
+            success: function(response){
+                if(response.error){
+                    alert(response.error);
+                }else {
+                    var updatefirstname = response.user.first_name;
+                    var updatelastname = response.user.last_name;
+                    var updateemail = response.user.email;
+                    var accountPic = response.user.avatar;
+                    $('#updatefirstname').val(updatefirstname);
+                    $('#updatelastname').val(updatelastname);
+                    $('#updateemail').val(updateemail);
+                    $('#accountPic').val(accountPic);
+
+                    $('#imageAvatar').append(
+                        "<img src='"+accountPic+"' class='proImages'/>"
+                    );
+                }
+            }
+        })
+    };
+
+    $('#updateButton').on('click', function(e){
+        e.preventDefault();
+        var changedfirstname = $('#updatefirstname').val();
+        var changedlastname = $('#updatelastname').val();
+        var changedemail = $('#updateemail').val();
+        var changedAccountPic = $('#accountPic').val();
+
+        $.ajax({
+            url: 'xhr/update_user.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                first_name: changedfirstname,
+                last_name: changedlastname,
+                email: changedemail,
+                avatar: changedAccountPic
+            },
+            success: function(response){
+                if(response.error){
+                    alert(response.error)
+                }else {
+
+
+                    alert("Account Updated");
+                }
+            }
+        })
+    });
+    updateAcct();
+
+    /* Start formatting for updating user accounts */
+    /* End formatting for updating accounts */
 	/*	
 	==================================== END EVENTS 
 	===============================================
