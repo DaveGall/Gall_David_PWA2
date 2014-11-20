@@ -410,6 +410,7 @@ td {
     float: left;
     clear: right;
 }
+/* Formatting for my weather display box */
 #conditions h3 {
     text-align: center;
 }
@@ -427,6 +428,7 @@ td {
 #middle .lighten, #donateNow {
     color: #bac9ff;
 }
+/* Formatting for the donation box */
 #donateNow h3 {
     text-align: center;
 }
@@ -446,6 +448,7 @@ td {
     z-index: 1000;
     display: none;
 }
+/* Formatting for the colorbox gallery */
 .smallImages {
     margin: 10px;
 

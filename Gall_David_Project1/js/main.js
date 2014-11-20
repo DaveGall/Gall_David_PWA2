@@ -19,7 +19,7 @@
     $('#submit').on('click', function(){
         var firstname =$('#fName').val(),
             lastname = $('#lName').val(),
-            username = $('#username').val(),
+            username = $('#username').val(), /* This section sets a variable for the input into the specified fields. */
             email = $('#email').val(),
             password = $('#password').val();
         console.log(firstname+" "+lastname+" "+username+" "+password+" "+email);
@@ -29,7 +29,7 @@
          type: 'post',
          dataType: 'json',
          data: {
-         firstname: firstname,
+         firstname: firstname,   /* This uses the variables to set the information in the database */
          lastname: lastname,
          username: username,
          email: email,
@@ -236,7 +236,7 @@ setInterval(rotateImages, 2000);
 
 
     function rotateImages(){
-        var curPhoto = $(' #gallery div.current ');
+        var curPhoto = $(' #gallery div.current ');  /* This is the code for my image rotator which rotates through 4 images. */
         var nxtPhoto = curPhoto.next();
         if(nxtPhoto.length == 0)
         nxtPhoto = $(' #gallery div:first ');
@@ -283,7 +283,7 @@ setInterval(rotateImages, 2000);
             dataType: 'json',
             data: {
                 projectName: projName,
-                projectDescription: projDesc,
+                projectDescription: projDesc,   /* This set of code adds the projects to the database using the variables and data from above. */
                 dueDate: projDue,
                 updatedDate: projImage,
                 status: status
@@ -307,7 +307,7 @@ setInterval(rotateImages, 2000);
 
     $('#sortable').sortable();
 
-    $('#sortable').disableSelection();
+    $('#sortable').disableSelection();  /* This set of code is what makes the projects display draggable and sortable. */
 
 
 
@@ -325,7 +325,7 @@ setInterval(rotateImages, 2000);
             dataType: 'json',
             success: function(response){
                 if(response.error){
-                    console.log(response.error);
+                    console.log(response.error);     /* This set of code grabs the projects from the database to be displayed in the manner that I have written below. */
                 }else {
 
                     for(var i= 0, j=response.projects.length; i<j; i++){
@@ -348,7 +348,7 @@ setInterval(rotateImages, 2000);
                         console.log(result.id);
                         e.preventDefault();
                         var eyeD= $(this).attr('proID');
-                        console.log("This is the new trial id: "+eyeD);
+                        console.log("This is the new trial id: "+eyeD);   /* This section of code will delete projects from the users account */
                         $.ajax({
                             url: 'xhr/delete_project.php',
                             data: {
@@ -374,6 +374,8 @@ setInterval(rotateImages, 2000);
 projects();
     /* End formatting for getting projects */
 
+    /* This is the beginning of the code that will update a users account */
+
     var updateAcct = function(){
 
         $.ajax({
@@ -384,17 +386,17 @@ projects();
                 if(response.error){
                     alert(response.error);
                 }else {
-                    var updatefirstname = response.user.first_name;
+                    var updatefirstname = response.user.first_name;   /* These variables are used to retrieve the requested data from the database. */
                     var updatelastname = response.user.last_name;
                     var updateemail = response.user.email;
                     var accountPic = response.user.avatar;
                     $('#updatefirstname').val(updatefirstname);
                     $('#updatelastname').val(updatelastname);
-                    $('#updateemail').val(updateemail);
+                    $('#updateemail').val(updateemail);            /* This set of lines grabs the variables results and displays them in the correct field. */
                     $('#accountPic').val(accountPic);
 
                     $('#imageAvatar').append(
-                        "<img src='"+accountPic+"' class='proImages'/>"
+                        "<img src='"+accountPic+"' class='proImages'/>"   /* This adds an image avatar if the user would like to add one. */
                     );
                 }
             }
@@ -405,7 +407,7 @@ projects();
         e.preventDefault();
         var changedfirstname = $('#updatefirstname').val();
         var changedlastname = $('#updatelastname').val();
-        var changedemail = $('#updateemail').val();
+        var changedemail = $('#updateemail').val();           /* This set of code grabs what the user entered into the fields and puts it in a variable */
         var changedAccountPic = $('#accountPic').val();
 
         $.ajax({
@@ -414,7 +416,7 @@ projects();
             dataType: 'json',
             data: {
                 first_name: changedfirstname,
-                last_name: changedlastname,
+                last_name: changedlastname,      /* This set of code updates the database */
                 email: changedemail,
                 avatar: changedAccountPic
             },
@@ -423,19 +425,20 @@ projects();
                     alert(response.error)
                 }else {
                     alert("Account Updated");
-                    window.location.assign('Welcome.html')
+                    window.location.assign('Welcome.html')    /* This set of code lets you know if anything was left blank, lets you know your account was updated and takes you back to your dashboard. */
                 }
             }
         })
     });
     updateAcct();
 
+/* This is the end of the formatting that will update a users account. */
 
 /*Start Weather formatting*/
 
     $('#weather').click(function(e){
         e.preventDefault();
-        var getState = $('#state').val();
+        var getState = $('#state').val();    /* This set of code will set variables that can be passed through the URL to retrieve specific location weather data */
         var getCity = $('#city').val();
         $.ajax({
 
@@ -446,7 +449,7 @@ projects();
                 var temp_f = parsed_json['current_observation']['temp_f'];
 
                 $('#results').append(
-                        "<p>"+"The Temperature in "+location+" is: "+ temp_f+"ºF</p>"
+                        "<p>"+"The Temperature in "+location+" is: "+ temp_f+"ºF</p>"   /* This set of code runs the variables through the website and then displays the results in the desire place. */
                 );
 
 
@@ -461,7 +464,7 @@ projects();
 /* Slider Widget Start */
 
     $( "#simple" ).slider({
-        value:100,
+        value:100,     /* This is a little donation slider that I added in case anyone wants to donate. */
         min: 0,
         max: 500,
         step: 50,
@@ -475,7 +478,7 @@ projects();
 
 /*  Start color box formatting */
     $('#rightGallery').find('a').colorbox({
-        'rel' :'gal',
+        'rel' :'gal',                  /* This is my colorbox coded area that I added */
         'maxWidth' : '90%',
         'scalePhotos' : true,
         'opacity' : '0.5'
