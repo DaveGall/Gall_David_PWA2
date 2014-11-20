@@ -452,6 +452,21 @@ projects();
 
 /*End Weather formatting*/
 
+/* Slider Widget Start */
+
+    $( "#simple" ).slider({
+        value:100,
+        min: 0,
+        max: 500,
+        step: 50,
+        slide: function( event, ui ) {
+            $( "#amount" ).val( "$" + ui.value );
+        }
+    });
+    $( "#amount" ).val( "$" + $( "#simple" ).slider( "value" ) );
+
+/* Slider Widget End */
+
     /* Start formatting for updating user accounts */
     /* End formatting for updating accounts */
 	/*	

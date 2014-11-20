@@ -424,7 +424,18 @@ td {
     padding-top: 12px;
     color: #2643b2;
 }
-
+#middle .lighten, #donateNow {
+    color: #bac9ff;
+}
+#donateNow h3 {
+    text-align: center;
+}
+#middle p {
+    padding-left: 50px;
+}
+#donateButton {
+    margin: 80px 20px 20px 210px;
+}
 #overlay {             /* overlay styling */
     width: 100%;
     height: 100%;
