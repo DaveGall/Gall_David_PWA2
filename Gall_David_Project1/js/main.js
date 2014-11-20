@@ -467,6 +467,16 @@ projects();
 
 /* Slider Widget End */
 
+/*  Start color box formatting */
+    $('#rightGallery').find('a').colorbox({
+        'rel' :'gal',
+        'maxWidth' : '90%',
+        'scalePhotos' : true,
+        'opacity' : '0.5'
+    });
+
+/*  End color box formatting */
+
     /* Start formatting for updating user accounts */
     /* End formatting for updating accounts */
 	/*	

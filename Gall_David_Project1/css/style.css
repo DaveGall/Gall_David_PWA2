@@ -446,6 +446,23 @@ td {
     z-index: 1000;
     display: none;
 }
+.smallImages {
+    margin: 10px;
+
+}
+
+.cBox {
+    margin-top: 40px;
+    border-top: 1px solid #b28d22;
+}
+.cBox h3 {
+    color: #bac9ff;
+    text-align: center;
+}
+#rightGallery {
+    margin-top: 20px;
+}
+
 #modal {          /* Modal window styling */
     width: 330px;
     background-color: #ffd55d;
