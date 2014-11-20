@@ -15,20 +15,43 @@
 	
 <!--This is an example of how to embed Geolookup. Use your own API key and city location-->	
 	
-<script> jQuery(document).ready(function($) { 
-	$.ajax({ 
-		url : "http://api.wunderground.com/api/fea5f7c6081ec410/geolookup/conditions/q/OR/Ashland.json",
+<script> $(function($) {
+    $('#submit').click(function(e){
+        e.preventDefault();
+    var getState = $('#state').val();
+    var getCity = $('#city').val();
+	$.ajax({
+
+		url : "http://api.wunderground.com/api/fea5f7c6081ec410/geolookup/conditions/q/"+getState+"/"+getCity+".json",
 		dataType : "jsonp", 
 		success : function(parsed_json) { 
 			var location = parsed_json['location']['city']; 
 			var temp_f = parsed_json['current_observation']['temp_f'];
-            alert("Current temperature in " + location + " is: " + temp_f+"ºF");
+
+            $('#results').append(
+                    "<p>"+"The Temperature in: "+location+ "<br>"+"Is: "+ temp_f+"ºF</p>"
+            );
+
+
+
 		} 
 	});
+});
 }); 
 
 </script>		
-	
+	<div>
+        <h3>Current Conditions</h3>
+        <label for="state">State</label><br>
+        <input id="state" type="text" placeholder="Select State"><br>
+        <label for="city">City</label><br>
+        <input id="city" type="text" placeholder="Select City"><br>
+        <button id="submit">Submit</button>
+        <p id="results"></p>
+
+	</div>
+
+
 <!--Use your own API key and city location-->
 	
 <!--1.Embed the WU 3-day forecast summary feature.-->
@@ -208,6 +231,8 @@
                 dataType: 'jsonp',
                 success: function(data){
                     var map = data['radar']['url'];
+
+
                     console.log("This is the animated map: "+map);
                 }
             })

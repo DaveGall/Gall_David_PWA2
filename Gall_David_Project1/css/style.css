@@ -391,6 +391,40 @@ td {
 /*End styling for the project page*/
 /*begin Modal window styling*/
 
+#conditions, #middle, #farRight {
+    width: 300px;
+    height: 300px;
+    margin: 8px;
+    background: #2643b2;
+    border-radius: 10px;
+}
+#indent {
+    padding-left: 10px;
+}
+#conditions {
+    float: left;
+    background: #2643b2;
+    color: #bac9ff;
+}
+#middle, #farRight {
+    float: left;
+    clear: right;
+}
+#conditions h3 {
+    text-align: center;
+}
+#weatherDisplay {
+    width: 300px;
+    background: #bac9ff;
+    height: 97px;
+    border-radius: 10px;
+}
+#weatherDisplay p {
+    text-align: center;
+    padding-top: 12px;
+    color: #2643b2;
+}
+
 #overlay {             /* overlay styling */
     width: 100%;
     height: 100%;

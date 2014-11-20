@@ -331,7 +331,7 @@ setInterval(rotateImages, 2000);
                                 "<div id='desc'> "+result.projectDescription+"</div>"+
                                 "<div id='status'> "+result.status+"</div>"+
                                 "<div id='date'>"+result.dueDate+"</div>"+"<div id='proButtons'>"+
-                                '<input name="edit" type="button" class="edit" value="Edit">'+'<input proID="' + result.id +'" name="delete" type="button" class="delete" value="Delete">'+'<input name="view" type="button" class="view" value="View">'+"</div>"+'</div>'
+                                '<input name="edit" type="button" class="edit" value="Edit">'+'<input id="opener" proID="' + result.id +'" name="delete" type="button" class="delete" value="Delete">'+'<input name="view" type="button" class="view" value="View">'+"</div>"+'</div>'
                         );
 
 
@@ -423,6 +423,34 @@ projects();
         })
     });
     updateAcct();
+
+
+/*Start Weather formatting*/
+
+    $('#weather').click(function(e){
+        e.preventDefault();
+        var getState = $('#state').val();
+        var getCity = $('#city').val();
+        $.ajax({
+
+            url : "http://api.wunderground.com/api/fea5f7c6081ec410/geolookup/conditions/q/"+getState+"/"+getCity+".json",
+            dataType : "jsonp",
+            success : function(parsed_json) {
+                var location = parsed_json['location']['city'];
+                var temp_f = parsed_json['current_observation']['temp_f'];
+
+                $('#results').append(
+                        "<p>"+"The Temperature in "+location+" is: "+ temp_f+"ºF</p>"
+                );
+
+
+
+            }
+        });
+    });
+
+
+/*End Weather formatting*/
 
     /* Start formatting for updating user accounts */
     /* End formatting for updating accounts */
