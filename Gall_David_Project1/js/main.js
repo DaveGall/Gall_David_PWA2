@@ -13,6 +13,45 @@
 	===============================================
 	========================= APPLICATION FUNCTIONS	
 	*/
+
+    /* Begin Sign Up Formatting */
+
+    $('#submit').on('click', function(){
+        var firstname =$('#fName').val(),
+            lastname = $('#lName').val(),
+            username = $('#username').val(),
+            email = $('#email').val(),
+            password = $('#password').val();
+        console.log(firstname+" "+lastname+" "+username+" "+password+" "+email);
+
+         $.ajax({
+         url: 'xhr/register.php',
+         type: 'post',
+         dataType: 'json',
+         data: {
+         firstname: firstname,
+         lastname: lastname,
+         username: username,
+         email: email,
+         password: password
+         },
+
+         success: function(response){
+
+         if(response.error){
+         alert(response.error);
+         }else{
+         window.location.assign('index.html');
+         }
+         }
+         })
+    });
+
+    /* End Sign UP Formatting */
+
+
+
+
 /* Pop Up window button styling, overlay styling and image hover styling */
     $(".modalClick").on("click", function(event){  /* Begins the function that tells the computer to find class modalClick and listen for a click */
        event.preventDefault();  /* This prevents the computer from doing what it would normally so that it will perform what we want it to. */
@@ -81,7 +120,7 @@
 
 
 
-   /* var checkLoginState = function(){
+  /* var checkLoginState = function(){
 		$.ajax({
 			url: 'xhr/check_login.php',
 			type: 'get',
@@ -214,39 +253,7 @@ setInterval(rotateImages, 2000);
 
     /* End formatting for rotating images */
 
-    /* Begin Sign Up Formatting */
 
-    $('#submit').on('click', function(){
-       var firstname =$('#fName').val(),
-           lastname = $('#lName').val(),
-           username = $('#username').val(),
-           email = $('#email').val(),
-           password = $('#password').val();
-           console.log(firstname+" "+lastname+" "+username+" "+password+" "+email);
-
-        $.ajax({
-            url: 'xhr/register.php',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                firstname: firstname,
-                lastname: lastname,
-                username: username,
-                email: email,
-                password: password
-            },
-
-            success: function(response){
-                if(response.error){
-                    alert(response.error);
-                }else{
-                    window.location.assign('index.html');
-                }
-            }
-        })
-    });
-
-    /* End Sign UP Formatting */
 
     /* Start display username formatting */
 
@@ -415,9 +422,8 @@ projects();
                 if(response.error){
                     alert(response.error)
                 }else {
-
-
                     alert("Account Updated");
+                    window.location.assign('Welcome.html')
                 }
             }
         })
