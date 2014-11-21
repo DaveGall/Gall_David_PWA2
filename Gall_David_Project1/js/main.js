@@ -1,5 +1,5 @@
 /*  
-	Your Project Title
+	Vault Pro: Project Management Application
 	Author: You
 *//*  Project by David Gall  */
 
